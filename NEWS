@@ -2,6 +2,7 @@ Package: aroma.apd
 ==================
 
 Version: 0.6.0 [2015-02-24]
+o ROBUSTNESS: Importing suggested functions using ::.
 o ROBUSTNESS: Declaring all S3 methods.
 o Bumped package dependencies.
 

@@ -44,7 +44,7 @@
 # @keyword programming
 #**/#######################################################################
 setMethodS3("gtypeCelToPQ", "default", function(filename, units=NULL, ..., cdf=NULL, nbrOfQuartets=NULL, verbose=FALSE) {
-  require("affxparser") || throw("Package not loaded: affxparser");
+  requireNamespace("affxparser") || throw("Package not loaded: affxparser");
 
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -70,21 +70,21 @@ setMethodS3("gtypeCelToPQ", "default", function(filename, units=NULL, ..., cdf=N
     cdfFile <- cdf;
   } else {
     verbose && enter(verbose, "Obtaining chip type from CEL header");
-    celHeader <- readCelHeader(filename);
+    celHeader <- affxparser::readCelHeader(filename);
     chiptype <- celHeader$chiptype;
     verbose && exit(verbose);
     verbose && enter(verbose, "Searching for CDF file");
-    cdfFile <- findCdf(chiptype);
+    cdfFile <- affxparser::findCdf(chiptype);
     verbose && exit(verbose);
   }
 
   if (!is.list(cdf)) {
     verbose && enter(verbose, "Reading CDF structure");
-    cdf <- readCdfUnits(cdfFile, units=units, stratifyBy="pmmm");
+    cdf <- affxparser::readCdfUnits(cdfFile, units=units, stratifyBy="pmmm");
     verbose && exit(verbose);
 
     verbose && enter(verbose, "Rearranging CDF structure");
-    cdf <- applyCdfGroups(cdf, cdfGtypeCelToPQ);
+    cdf <- affxparser::applyCdfGroups(cdf, cdfGtypeCelToPQ);
     verbose && exit(verbose);
   }
 
@@ -92,7 +92,7 @@ setMethodS3("gtypeCelToPQ", "default", function(filename, units=NULL, ..., cdf=N
   # Read CEL intensities
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   verbose && enter(verbose, "Reading CEL file");
-  cel <- readCelUnits(filename, ..., cdf=cdf);
+  cel <- affxparser::readCelUnits(filename, ..., cdf=cdf);
   verbose && exit(verbose);
 
   cdf <- NULL; # Not needed anymore
