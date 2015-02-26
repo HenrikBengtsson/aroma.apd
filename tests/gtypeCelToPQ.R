@@ -1,5 +1,7 @@
+library("aroma.apd")
+
 # Scan for CEL files
-files <- list.files(pattern="[.](c|C)(e|E)(l|L)$")
+files <- list.files(pattern="[.](cel|CEL)$")
 
 # Convert each to RAW file
 for (file in files) {
@@ -7,10 +9,4 @@ for (file in files) {
   file.remove(rawFile)
   cel <- gtypeCelToPQ(file, verbose=TRUE)
   write.table(file=rawFile, cel, sep="\t", quote=FALSE)
-
-  rm(file, rawFile, cel)
-  gc()
 }
-
-# Clean up
-rm(files)
