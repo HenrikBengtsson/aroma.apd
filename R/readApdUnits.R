@@ -71,12 +71,6 @@
 #   the read map was not given explicitly.
 # }
 #
-# \references{
-#   [1] Affymetrix Inc, Affymetrix GCOS 1.x compatible file formats,
-#       June 14, 2005.
-#       \url{http://www.affymetrix.com/support/developer/}
-# }
-#
 # @keyword "file"
 # @keyword "IO"
 #*/#########################################################################
