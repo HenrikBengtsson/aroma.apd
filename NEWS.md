@@ -1,4 +1,9 @@
-# Version 0.6.0-9002 (2022-07-17)
+# Version (development version)
+
+ * ...
+
+
+# Version 0.6.1 (2022-07-17)
 
 ## Miscellaneous
 
