@@ -152,15 +152,15 @@ debug_full: debug
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Update existing packages
 update:
-	$(R_SCRIPT) -e "try(update.packages(ask=FALSE)); source('http://bioconductor.org/biocLite.R'); biocLite(ask=FALSE);"
+	$(R_SCRIPT) -e "try(update.packages(ask=FALSE)); source('https://bioconductor.org/biocLite.R'); biocLite(ask=FALSE);"
 
 # Install missing dependencies
 deps: DESCRIPTION
 	$(MAKE) update
-	$(R_SCRIPT) -e "x <- unlist(strsplit(read.dcf('DESCRIPTION',fields=c('Depends', 'Imports', 'Suggests')),',')); x <- gsub('([[:space:]]*|[(].*[)])', '', x); libs <- .libPaths()[file.access(.libPaths(), mode=2) == 0]; x <- unique(setdiff(x, c('R', rownames(installed.packages(lib.loc=libs))))); if (length(x) > 0) { try(install.packages(x)); x <- unique(setdiff(x, c('R', rownames(installed.packages(lib.loc=libs))))); source('http://bioconductor.org/biocLite.R'); biocLite(x); }"
+	$(R_SCRIPT) -e "x <- unlist(strsplit(read.dcf('DESCRIPTION',fields=c('Depends', 'Imports', 'Suggests')),',')); x <- gsub('([[:space:]]*|[(].*[)])', '', x); libs <- .libPaths()[file.access(.libPaths(), mode=2) == 0]; x <- unique(setdiff(x, c('R', rownames(installed.packages(lib.loc=libs))))); if (length(x) > 0) { try(install.packages(x)); x <- unique(setdiff(x, c('R', rownames(installed.packages(lib.loc=libs))))); source('https://bioconductor.org/biocLite.R'); biocLite(x); }"
 
 setup:	update deps
-	$(R_SCRIPT) -e "source('http://aroma-project.org/hbLite.R'); hbLite('R.oo')"
+	$(R_SCRIPT) -e "source('https://aroma-project.org/hbLite.R'); hbLite('R.oo')"
 
 ns:
 	$(R_SCRIPT) -e "library('$(PKG_NAME)'); source('X:/devtools/NAMESPACE.R'); writeNamespaceSection('$(PKG_NAME)'); writeNamespaceImports('$(PKG_NAME)');"
@@ -390,7 +390,7 @@ $(R_CRAN_OUTDIR)/$(PKG_NAME),EmailToCRAN.txt: $(R_CRAN_OUTDIR)/$(PKG_TARBALL)
 	$(R_SCRIPT) -e "RCmdCheckTools::testPkgsToSubmit(delta=2/3)"
 
 cran_setup: $(R_CRAN_OUTDIR)/$(PKG_TARBALL)
-	$(R_SCRIPT) -e "if (!nzchar(system.file(package='RCmdCheckTools'))) { source('http://aroma-project.org/hbLite.R'); hbLite('RCmdCheckTools', devel=TRUE); }"
+	$(R_SCRIPT) -e "if (!nzchar(system.file(package='RCmdCheckTools'))) { source('https://aroma-project.org/hbLite.R'); hbLite('RCmdCheckTools', devel=TRUE); }"
 
 cran: cran_setup $(R_CRAN_OUTDIR)/$(PKG_NAME),EmailToCRAN.txt
 
