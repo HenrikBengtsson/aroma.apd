@@ -1,7 +1,7 @@
 
 
 <div id="badges"><!-- pkgdown markup -->
-<a href="https://CRAN.R-project.org/web/checks/check_results_aroma.apd.html"><img border="0" src="https://www.r-pkg.org/badges/version/aroma.apd" alt="CRAN check status"/></a>       
+<a href="https://CRAN.R-project.org/web/checks/check_results_aroma.apd.html"><img border="0" src="https://www.r-pkg.org/badges/version/aroma.apd" alt="CRAN check status"/></a> <a href="https://github.com/HenrikBengtsson/aroma.apd/actions?query=workflow%3AR-CMD-check"><img border="0" src="https://github.com/HenrikBengtsson/aroma.apd/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop" alt="R CMD check status"/></a>      
 </div>
 
 # aroma.apd: A Probe-Level Data File Format Used by 'aroma.affymetrix' [deprecated] 
