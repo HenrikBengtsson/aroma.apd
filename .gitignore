@@ -5,3 +5,4 @@
 .check
 *.Rproj*
 .make/README.md.rsp
+.Rdump/
