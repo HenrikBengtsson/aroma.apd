@@ -1,5 +1,5 @@
 Package: aroma.apd
-Version: 0.6.0-9000
+Version: 0.6.0-9001
 Depends:
   R (>= 3.0.0)
 Imports:
@@ -10,7 +10,6 @@ Imports:
 Suggests:
   affxparser
 SuggestsNote: Recommended: affxparser
-Date: 2016-02-21
 Title: A Probe-Level Data File Format Used by 'aroma.affymetrix' [deprecated]
 Authors@R: c(person("Henrik", "Bengtsson", role=c("aut", "cre", "cph"),
                                           email = "henrikb@braju.com"))
