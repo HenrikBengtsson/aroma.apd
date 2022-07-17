@@ -6,3 +6,6 @@
 *.Rproj*
 .make/README.md.rsp
 .Rdump/
+revdep/checks
+revdep/library
+revdep/data.sqlite
