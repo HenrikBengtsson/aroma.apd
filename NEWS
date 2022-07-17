@@ -1,6 +1,9 @@
 Package: aroma.apd
 ==================
 
+Version: 0.6.0-9002 [2022-07-17]
+o Fix unnecessary escape of underscores (_) in Rd files.
+
 Version: 0.6.0 [2015-02-24]
 o ROBUSTNESS: Added package tests (from examples).
 o ROBUSTNESS: Importing suggested functions using ::.
