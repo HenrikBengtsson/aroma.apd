@@ -59,6 +59,7 @@
 \author{Henrik Bengtsson}
 
 \examples{
+\dontshow{if (interactive()) \{}
 
 # Float precision
 .Machine$float.eps <- (2^((8-4)*8)*.Machine$double.eps)
@@ -136,6 +137,8 @@ if (require("affxparser") && FALSE) {
 # 4. Clean up
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 file.remove(pathname)
+
+\dontshow{\}}
 }
 
 \seealso{
