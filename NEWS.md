@@ -1,3 +1,8 @@
+# Version (development version)
+
+ * ...
+ 
+
 # Version 0.7.1 (2025-04-06)
 
 ## Miscellaneous
